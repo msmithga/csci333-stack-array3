@@ -11,11 +11,23 @@ Stack::~Stack() {
 }
 
 void Stack::push(int value) {
-  //if theStack is full
-  // create new stack twice as big
-  // copy all elements to new stack
-  // delete old stack
-  // point old stack pointer to new stack
+  int initialSize = size();
+
+  int newSize = initialSize*2;
+
+  int* newStack;
+
+  if(top == initialSize) {
+    newStack = new int[newSize];
+    for(int i = 0; i < newSize; ++i) {
+      newStack[i] = theStack[i];
+    }
+  }
+ 
+  delete[] theStack;
+
+  theStack = newStack;
+
   theStack[top] = value;
   top++;
 }

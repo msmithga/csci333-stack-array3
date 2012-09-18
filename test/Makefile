@@ -23,5 +23,3 @@ clean:
 	rm -f stack_test
 	rm -f $(GTEST_MAINA)
 	cd $(GTEST)/make; $(MAKE) clean
-
-
